@@ -9,7 +9,7 @@ import fire
 
 def main(
         model_ckpt: str = 'yolo11n.pt',
-        dataset: str = 'dataset/data.yaml',
+        dataset: str = 'C:/Users/admin/maicon/Jimyeong/dataset/testdataset/data.yaml',
         epochs: int = 100,
         patience: int = 100,
         batch_size: int = 16,
