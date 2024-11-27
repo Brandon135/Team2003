@@ -5,29 +5,13 @@ import time
 import asyncio
 # 초기 HSV 범위 설정
 lower_green = np.array([67, 23, 101])
+
 upper_green = np.array([80, 255, 168])
 
 
 def nothing(x):
     pass
 
-def create_trackbars():
-    cv2.namedWindow("HSV Trackbars")
-    cv2.createTrackbar("L-H", "HSV Trackbars", lower_green[0], 179, nothing)
-    cv2.createTrackbar("L-S", "HSV Trackbars", lower_green[1], 255, nothing)
-    cv2.createTrackbar("L-V", "HSV Trackbars", lower_green[2], 255, nothing)
-    cv2.createTrackbar("U-H", "HSV Trackbars", upper_green[0], 179, nothing)
-    cv2.createTrackbar("U-S", "HSV Trackbars", upper_green[1], 255, nothing)
-    cv2.createTrackbar("U-V", "HSV Trackbars", upper_green[2], 255, nothing)
-
-def get_hsv_values():
-    l_h = cv2.getTrackbarPos("L-H", "HSV Trackbars")
-    l_s = cv2.getTrackbarPos("L-S", "HSV Trackbars")
-    l_v = cv2.getTrackbarPos("L-V", "HSV Trackbars")
-    u_h = cv2.getTrackbarPos("U-H", "HSV Trackbars")
-    u_s = cv2.getTrackbarPos("U-S", "HSV Trackbars")
-    u_v = cv2.getTrackbarPos("U-V", "HSV Trackbars")
-    return np.array([l_h, l_s, l_v]), np.array([u_h, u_s, u_v])
 #Lane, HSV Detection
 def detect_lines_and_intersections(image, rho, theta, threshold, min_line_length, max_line_gap, angle_threshold):
     crop_img = image[240:480, 150:490].copy()
