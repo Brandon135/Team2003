@@ -1,0 +1,14 @@
+name: robot
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+  - defaults
+dependencies:
+  - python=3.8
+  - pytorch=1.11.0
+  - pytorch-cuda=11.8
+  - torchvision=0.12.0
+  - pip:
+    - opencv-python==4.9.0.80
+    - ultralytics==8.3.20
